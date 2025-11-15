@@ -1,3 +1,22 @@
+/* ========== CSS VARIABLES ========== */
+:root {
+    /* Color palette */
+    --purple-primary: #b494ff;
+    --purple-dark: #4a3a9e;
+    --pink-light: #ffc4e1;
+    --blue-light: #c4e7ff;
+    --green-light: #d4f4dd;
+    --yellow-light: #fff4d6;
+    
+    /* Shadows */
+    --shadow-normal: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.2);
+    
+    /* Transitions */
+    --transition-smooth: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ========== GLOBAL STYLES ========== */
 * {
     margin: 0;
     padding: 0;
@@ -8,11 +27,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
     background: linear-gradient(135deg,
-        #ffd6e8 0%,
+        var(--pink-light) 0%,
         #e7d4ff 25%,
-        #c4e7ff 50%,
-        #d4f4dd 75%,
-        #fff4d6 100%);
+        var(--blue-light) 50%,
+        var(--green-light) 75%,
+        var(--yellow-light) 100%);
     background-size: 400% 400%;
     animation: gradientShift 5s ease infinite;
     padding: 20px;
@@ -29,6 +48,7 @@ body {
     margin: 0 auto;
 }
 
+/* ========== HEADER ========== */
 header {
     text-align: center;
     margin-bottom: 60px;
@@ -36,10 +56,10 @@ header {
 }
 
 .title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Abril Fatface', serif;
     font-size: 5.5rem;
-    font-weight: 600;
-    background: linear-gradient(45deg, #ffc4e1, #d4c4ff, #c4e7ff, #c4f4dd, #fff4d6);
+    font-weight: 400;
+    background: linear-gradient(45deg, var(--pink-light), #d4c4ff, var(--blue-light), #c4f4dd, var(--yellow-light));
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -48,30 +68,16 @@ header {
     margin-bottom: 15px;
     filter: drop-shadow(0 4px 15px rgba(180, 148, 255, 0.4));
     letter-spacing: 6px;
-    text-transform: none;
     -webkit-text-stroke-width: 2px;
-    text-stroke-width: 2px;
 }
 
 @keyframes textStroke {
-    0% {
-        -webkit-text-stroke-color: #d946a6;
-    }
-    20% {
-        -webkit-text-stroke-color: #c9a300;
-    }
-    40% {
-        -webkit-text-stroke-color: #4dcca3;
-    }
-    60% {
-        -webkit-text-stroke-color: #3d8fd9;
-    }
-    80% {
-        -webkit-text-stroke-color: #8b6fd9;
-    }
-    100% {
-        -webkit-text-stroke-color: #d946a6;
-    }
+    0% { -webkit-text-stroke-color: #d946a6; }
+    20% { -webkit-text-stroke-color: #c9a300; }
+    40% { -webkit-text-stroke-color: #4dcca3; }
+    60% { -webkit-text-stroke-color: #3d8fd9; }
+    80% { -webkit-text-stroke-color: #8b6fd9; }
+    100% { -webkit-text-stroke-color: #d946a6; }
 }
 
 @keyframes gradientText {
@@ -82,8 +88,8 @@ header {
 
 .subtitle {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.2rem;
-    color: #4a3a9e;
+    font-size: 2.5rem;
+    color: var(--purple-dark);
     font-weight: 500;
     text-shadow:
         -1px -1px 0 #fff,
@@ -94,27 +100,15 @@ header {
 }
 
 @keyframes subtitleColorShift {
-    0% {
-        color: #4a3a9e;
-    }
-    20% {
-        color: #d946a6;
-    }
-    40% {
-        color: #3d8fd9;
-    }
-    60% {
-        color: #4dcca3;
-    }
-    80% {
-        color: #8b6fd9;
-    }
-    100% {
-        color: #4a3a9e;
-    }
+    0% { color: var(--purple-dark); }
+    20% { color: #d946a6; }
+    40% { color: #3d8fd9; }
+    60% { color: #4dcca3; }
+    80% { color: #8b6fd9; }
+    100% { color: var(--purple-dark); }
 }
 
-/* Mood Board Grid - Pinterest Style */
+/* ========== MOOD BOARD GRID ========== */
 .mood-board {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -122,14 +116,14 @@ header {
     padding: 20px;
 }
 
-/* Individual Mood Tiles */
+/* ========== MOOD TILES ========== */
 .mood-tile {
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 50px 30px;
     cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15),
+    transition: transform var(--transition-smooth), box-shadow 0.4s ease;
+    box-shadow: var(--shadow-normal),
                 0 0 0 3px rgba(255, 255, 255, 0.8),
                 0 0 0 6px rgba(180, 148, 255, 0.3);
     border: 3px solid rgba(180, 148, 255, 0.6);
@@ -137,6 +131,7 @@ header {
     overflow: hidden;
 }
 
+/* Decorative borders */
 .mood-tile::before {
     content: '';
     position: absolute;
@@ -161,10 +156,9 @@ header {
     pointer-events: none;
 }
 
-/* Scattered Pinterest-style positioning */
+/* Pinterest-style scattered positioning */
 .mood-tile:nth-child(1) {
     transform: rotate(-2deg);
-    grid-row: span 1;
 }
 
 .mood-tile:nth-child(2) {
@@ -190,86 +184,85 @@ header {
     transform: rotate(1.5deg);
 }
 
-/* Tile Color Animations - Using background-position for smooth transitions */
-@keyframes colorShiftBored {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+/* Hover effect */
+.mood-tile:hover {
+    transform: translateY(-10px) rotate(0deg) scale(1.05);
+    box-shadow: var(--shadow-hover);
 }
 
-@keyframes colorShiftStressed {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-@keyframes colorShiftCreative {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-@keyframes colorShiftCurious {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-@keyframes colorShiftSilly {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-@keyframes colorShiftCompetitive {
+/* ========== TILE COLOR ANIMATIONS ========== */
+@keyframes colorShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
 }
 
 .mood-tile.bored {
-    background: linear-gradient(135deg, rgba(168, 237, 234, 0.8), rgba(254, 214, 227, 0.8), rgba(200, 220, 255, 0.8), rgba(180, 250, 240, 0.8));
+    background: linear-gradient(135deg, 
+        rgba(168, 237, 234, 0.8), 
+        rgba(254, 214, 227, 0.8), 
+        rgba(200, 220, 255, 0.8), 
+        rgba(180, 250, 240, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftBored 1.5s ease-in-out infinite;
-    animation-delay: -0s;
+    animation: colorShift 1.5s ease-in-out infinite;
+    animation-delay: 0s;
 }
 
 .mood-tile.stressed {
-    background: linear-gradient(135deg, rgba(255, 240, 180, 0.8), rgba(200, 245, 200, 0.8), rgba(180, 220, 255, 0.8), rgba(255, 255, 200, 0.8));
+    background: linear-gradient(135deg, 
+        rgba(255, 240, 180, 0.8), 
+        rgba(200, 245, 200, 0.8), 
+        rgba(180, 220, 255, 0.8), 
+        rgba(255, 255, 200, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftStressed 1.5s ease-in-out infinite;
-    animation-delay: -0.25s;
+    animation: colorShift 1.5s ease-in-out infinite;
+    animation-delay: 0.25s;
 }
 
 .mood-tile.creative {
-    background: linear-gradient(135deg, rgba(255, 200, 170, 0.8), rgba(255, 230, 200, 0.8), rgba(255, 190, 160, 0.8), rgba(255, 220, 190, 0.8));
+    background: linear-gradient(135deg, 
+        rgba(255, 200, 170, 0.8), 
+        rgba(255, 230, 200, 0.8), 
+        rgba(255, 190, 160, 0.8), 
+        rgba(255, 220, 190, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftCreative 1.5s ease-in-out infinite;
-    animation-delay: -0.5s;
+    animation: colorShift 1.5s ease-in-out infinite;
+    animation-delay: 0.5s;
 }
 
 .mood-tile.curious {
-    background: linear-gradient(135deg, rgba(180, 240, 255, 0.8), rgba(253, 219, 146, 0.8), rgba(209, 253, 255, 0.8), rgba(255, 240, 160, 0.8));
+    background: linear-gradient(135deg, 
+        rgba(180, 240, 255, 0.8), 
+        rgba(253, 219, 146, 0.8), 
+        rgba(209, 253, 255, 0.8), 
+        rgba(255, 240, 160, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftCurious 1.5s ease-in-out infinite;
-    animation-delay: -0.75s;
+    animation: colorShift 1.5s ease-in-out infinite;
+    animation-delay: 0.75s;
 }
 
 .mood-tile.silly {
-    background: linear-gradient(135deg, rgba(230, 180, 255, 0.8), rgba(251, 194, 235, 0.8), rgba(166, 193, 238, 0.8), rgba(255, 200, 250, 0.8));
+    background: linear-gradient(135deg, 
+        rgba(230, 180, 255, 0.8), 
+        rgba(251, 194, 235, 0.8), 
+        rgba(166, 193, 238, 0.8), 
+        rgba(255, 200, 250, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftSilly 1.5s ease-in-out infinite;
-    animation-delay: -1s;
+    animation: colorShift 1.5s ease-in-out infinite;
+    animation-delay: 1s;
 }
 
 .mood-tile.competitive {
-    background: linear-gradient(135deg, rgba(255, 200, 180, 0.8), rgba(255, 190, 200, 0.8), rgba(255, 235, 180, 0.8), rgba(255, 210, 190, 0.8));
+    background: linear-gradient(135deg, 
+        rgba(255, 200, 180, 0.8), 
+        rgba(255, 190, 200, 0.8), 
+        rgba(255, 235, 180, 0.8), 
+        rgba(255, 210, 190, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftCompetitive 1.5s ease-in-out infinite;
-    animation-delay: -1.25s;
+    animation: colorShift 1.5s ease-in-out infinite;
+    animation-delay: 1.25s;
 }
 
-/* Hover Effect */
-.mood-tile:hover {
-    transform: translateY(-10px) rotate(0deg) scale(1.05);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-}
-
-/* Symbol Container */
+/* ========== IMAGE STYLING ========== */
 .symbol {
     display: flex;
     justify-content: center;
@@ -291,6 +284,7 @@ header {
     transform: scale(1.1);
 }
 
+/* ========== TEXT STYLING ========== */
 .mood-tile h3 {
     text-align: center;
     font-size: 1.9rem;
@@ -305,217 +299,7 @@ header {
     color: #333;
 }
 
-/* ========== ILLUSTRATED SYMBOLS ========== */
-
-/* BORED - Clock */
-.clock {
-    width: 80px;
-    height: 80px;
-    border: 4px solid #b494ff;
-    border-radius: 50%;
-    position: relative;
-    background: rgba(180, 148, 255, 0.1);
-}
-
-.clock-hand {
-    width: 3px;
-    height: 35px;
-    background: #b494ff;
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform-origin: bottom center;
-    transform: translateX(-50%) rotate(45deg);
-    border-radius: 3px;
-}
-
-/* STRESSED - Waves */
-.waves {
-    display: flex;
-    gap: 8px;
-    align-items: flex-end;
-}
-
-.wave {
-    width: 20px;
-    height: 40px;
-    background: #96e6a1;
-    border-radius: 20px 20px 0 0;
-    animation: waveMotion 1.5s ease-in-out infinite;
-}
-
-.wave:nth-child(2) {
-    animation-delay: 0.2s;
-    height: 50px;
-}
-
-.wave:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-@keyframes waveMotion {
-    0%, 100% { height: 40px; }
-    50% { height: 60px; }
-}
-
-/* CREATIVE - Paint Palette */
-.palette {
-    width: 90px;
-    height: 70px;
-    background: rgba(252, 182, 159, 0.3);
-    border-radius: 50% 40% 50% 40%;
-    position: relative;
-    border: 3px solid #fcb69f;
-}
-
-.paint-blob {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-}
-
-.blob1 {
-    background: #ff6ec7;
-    top: 10px;
-    left: 15px;
-}
-
-.blob2 {
-    background: #7cffcb;
-    top: 10px;
-    right: 15px;
-}
-
-.blob3 {
-    background: #6eb5ff;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* CURIOUS - Lightbulb */
-.lightbulb {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.bulb {
-    width: 50px;
-    height: 65px;
-    background: #fddb92;
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    border: 3px solid #f4c430;
-    position: relative;
-}
-
-.bulb::after {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: white;
-    border-radius: 50%;
-    top: 15px;
-    left: 12px;
-    opacity: 0.8;
-}
-
-.base {
-    width: 30px;
-    height: 15px;
-    background: #ccc;
-    border-radius: 0 0 5px 5px;
-    border: 2px solid #999;
-    border-top: none;
-}
-
-/* SILLY - Smiley Face */
-.smiley {
-    width: 80px;
-    height: 80px;
-    background: #fbc2eb;
-    border-radius: 50%;
-    position: relative;
-    border: 4px solid #a6c1ee;
-}
-
-.eye {
-    width: 12px;
-    height: 12px;
-    background: #333;
-    border-radius: 50%;
-    position: absolute;
-    top: 25px;
-}
-
-.eye-left {
-    left: 20px;
-}
-
-.eye-right {
-    right: 20px;
-}
-
-.tongue {
-    width: 25px;
-    height: 30px;
-    background: #ff6b9d;
-    border-radius: 0 0 50% 50%;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* COMPETITIVE - Trophy */
-.trophy {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cup {
-    width: 50px;
-    height: 45px;
-    background: #fee140;
-    border-radius: 0 0 10px 10px;
-    border: 3px solid #fa709a;
-    position: relative;
-}
-
-.cup::before,
-.cup::after {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 30px;
-    background: transparent;
-    border: 3px solid #fa709a;
-    border-radius: 50%;
-    top: 5px;
-}
-
-.cup::before {
-    left: -18px;
-    border-right: none;
-}
-
-.cup::after {
-    right: -18px;
-    border-left: none;
-}
-
-.base-trophy {
-    width: 60px;
-    height: 8px;
-    background: #fa709a;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
-/* Responsive Design */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
     header {
         margin-bottom: 40px;
@@ -526,8 +310,7 @@ header {
         font-size: 3.5rem;
         letter-spacing: 3px;
         margin-bottom: 10px;
-        -webkit-text-stroke-width: 1.2px;
-        text-stroke-width: 1.2px;
+        -webkit-text-stroke-width: 1.5px;
     }
 
     .subtitle {
@@ -546,12 +329,10 @@ header {
         transform: rotate(0deg) !important;
         margin-top: 0 !important;
         padding: 30px 20px;
-        overflow: visible;
     }
 
     .symbol {
         height: 200px;
-        overflow: visible;
         margin-bottom: 5px;
     }
 
@@ -572,7 +353,6 @@ header {
         font-size: 2.8rem;
         letter-spacing: 2px;
         -webkit-text-stroke-width: 1px;
-        text-stroke-width: 1px;
     }
 
     .subtitle {
@@ -585,12 +365,10 @@ header {
 
     .mood-tile {
         padding: 25px 15px;
-        overflow: visible;
     }
 
     .symbol {
         height: 160px;
-        overflow: visible;
         margin-bottom: 3px;
     }
 
