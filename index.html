@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Bored | Pick Your Vibe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Mood-Bored</h1>
+            <p class="subtitle">How are you feeling?</p>
+        </header>
+
+        <div class="mood-board">
+            <!-- Bored Tile -->
+            <div class="mood-tile bored" data-mood="bored">
+                <div class="symbol">
+                    <div class="clock">
+                        <div class="clock-hand"></div>
+                    </div>
+                </div>
+                <h3>Bored</h3>
+            </div>
+
+            <!-- Stressed Tile -->
+            <div class="mood-tile stressed" data-mood="stressed">
+                <div class="symbol">
+                    <div class="waves">
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                        <div class="wave"></div>
+                    </div>
+                </div>
+                <h3>Stressed</h3>
+            </div>
+
+            <!-- Creative Tile -->
+            <div class="mood-tile creative" data-mood="creative">
+                <div class="symbol">
+                    <div class="palette">
+                        <div class="paint-blob blob1"></div>
+                        <div class="paint-blob blob2"></div>
+                        <div class="paint-blob blob3"></div>
+                    </div>
+                </div>
+                <h3>Creative</h3>
+            </div>
+
+            <!-- Curious Tile -->
+            <div class="mood-tile curious" data-mood="curious">
+                <div class="symbol">
+                    <div class="lightbulb">
+                        <div class="bulb"></div>
+                        <div class="base"></div>
+                    </div>
+                </div>
+                <h3>Curious</h3>
+            </div>
+
+            <!-- Silly Tile -->
+            <div class="mood-tile silly" data-mood="silly">
+                <div class="symbol">
+                    <div class="smiley">
+                        <div class="eye eye-left"></div>
+                        <div class="eye eye-right"></div>
+                        <div class="tongue"></div>
+                    </div>
+                </div>
+                <h3>Silly</h3>
+            </div>
+
+            <!-- Competitive Tile -->
+            <div class="mood-tile competitive" data-mood="competitive">
+                <div class="symbol">
+                    <div class="trophy">
+                        <div class="cup"></div>
+                        <div class="handles"></div>
+                        <div class="base-trophy"></div>
+                    </div>
+                </div>
+                <h3>Competitive</h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
