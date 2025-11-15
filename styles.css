@@ -523,29 +523,42 @@ header {
     }
 
     .title {
-        font-size: 3rem;
+        font-size: 3.5rem;
         letter-spacing: 3px;
         margin-bottom: 10px;
+        -webkit-text-stroke-width: 1.2px;
+        text-stroke-width: 1.2px;
     }
 
     .subtitle {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
     }
 
     .mood-board {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 10px;
+        max-width: 260px;
+        margin: 0 auto;
     }
 
     .mood-tile {
         transform: rotate(0deg) !important;
         margin-top: 0 !important;
-        padding: 40px 25px;
+        padding: 30px 20px;
+        overflow: visible;
     }
 
     .symbol {
-        height: 150px;
+        height: 200px;
+        overflow: visible;
+        margin-bottom: 5px;
+    }
+
+    .symbol img {
+        width: 95%;
+        height: 95%;
+        object-fit: contain;
     }
 
     .mood-tile h3 {
@@ -556,20 +569,35 @@ header {
 /* Extra small screens */
 @media (max-width: 480px) {
     .title {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
         letter-spacing: 2px;
+        -webkit-text-stroke-width: 1px;
+        text-stroke-width: 1px;
     }
 
     .subtitle {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
+    }
+
+    .mood-board {
+        max-width: 240px;
     }
 
     .mood-tile {
-        padding: 30px 20px;
+        padding: 25px 15px;
+        overflow: visible;
     }
 
     .symbol {
-        height: 120px;
+        height: 160px;
+        overflow: visible;
+        margin-bottom: 3px;
+    }
+
+    .symbol img {
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
     }
 
     .mood-tile h3 {
