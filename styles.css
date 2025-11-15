@@ -57,7 +57,7 @@ header {
 
 .title {
     font-family: 'Abril Fatface', serif;
-    font-size: 5.5rem;
+    font-size: 5rem;
     font-weight: 400;
     background: linear-gradient(45deg, var(--pink-light), #d4c4ff, var(--blue-light), #c4f4dd, var(--yellow-light));
     background-size: 300% 300%;
@@ -88,7 +88,7 @@ header {
 
 .subtitle {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--purple-dark);
     font-weight: 500;
     text-shadow:
@@ -314,7 +314,7 @@ header {
     }
 
     .subtitle {
-        font-size: 1.6rem;
+        font-size: 1.9rem;
     }
 
     .mood-board {
@@ -356,7 +356,7 @@ header {
     }
 
     .subtitle {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
     }
 
     .mood-board {
