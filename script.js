@@ -1,3 +1,14 @@
+// Scroll to top on page load/reload
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+
+// Also ensure we're at the top when the page loads
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 // Get all mood tiles
 const moodTiles = document.querySelectorAll('.mood-tile');
 

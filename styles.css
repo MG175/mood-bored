@@ -14,7 +14,7 @@ body {
         #d4f4dd 75%,
         #fff4d6 100%);
     background-size: 400% 400%;
-    animation: gradientShift 10s ease infinite;
+    animation: gradientShift 5s ease infinite;
     padding: 20px;
 }
 
@@ -39,16 +39,39 @@ header {
     font-family: 'Playfair Display', serif;
     font-size: 5.5rem;
     font-weight: 600;
-    background: linear-gradient(45deg, #ff6ec7, #b494ff, #6eb5ff, #7cffcb);
+    background: linear-gradient(45deg, #ffc4e1, #d4c4ff, #c4e7ff, #c4f4dd, #fff4d6);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradientText 8s ease infinite;
+    animation: gradientText 8s ease infinite, textStroke 7s linear infinite;
     margin-bottom: 15px;
     filter: drop-shadow(0 4px 15px rgba(180, 148, 255, 0.4));
     letter-spacing: 6px;
     text-transform: none;
+    -webkit-text-stroke-width: 2px;
+    text-stroke-width: 2px;
+}
+
+@keyframes textStroke {
+    0% {
+        -webkit-text-stroke-color: #d946a6;
+    }
+    20% {
+        -webkit-text-stroke-color: #c9a300;
+    }
+    40% {
+        -webkit-text-stroke-color: #4dcca3;
+    }
+    60% {
+        -webkit-text-stroke-color: #3d8fd9;
+    }
+    80% {
+        -webkit-text-stroke-color: #8b6fd9;
+    }
+    100% {
+        -webkit-text-stroke-color: #d946a6;
+    }
 }
 
 @keyframes gradientText {
@@ -59,10 +82,36 @@ header {
 
 .subtitle {
     font-family: 'Dancing Script', cursive;
-    font-size: 1.8rem;
-    color: #7b68ee;
+    font-size: 2.2rem;
+    color: #4a3a9e;
     font-weight: 500;
-    opacity: 0.9;
+    text-shadow:
+        -1px -1px 0 #fff,
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff;
+    animation: subtitleColorShift 10s ease infinite;
+}
+
+@keyframes subtitleColorShift {
+    0% {
+        color: #4a3a9e;
+    }
+    20% {
+        color: #d946a6;
+    }
+    40% {
+        color: #3d8fd9;
+    }
+    60% {
+        color: #4dcca3;
+    }
+    80% {
+        color: #8b6fd9;
+    }
+    100% {
+        color: #4a3a9e;
+    }
 }
 
 /* Mood Board Grid - Pinterest Style */
@@ -76,15 +125,40 @@ header {
 /* Individual Mood Tiles */
 .mood-tile {
     backdrop-filter: blur(10px);
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 50px 30px;
     cursor: pointer;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15),
+                0 0 0 3px rgba(255, 255, 255, 0.8),
+                0 0 0 6px rgba(180, 148, 255, 0.3);
+    border: 3px solid rgba(180, 148, 255, 0.6);
     position: relative;
     overflow: hidden;
-    background-size: 200% 200%;
+}
+
+.mood-tile::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid rgba(180, 148, 255, 0.4);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.mood-tile::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    pointer-events: none;
 }
 
 /* Scattered Pinterest-style positioning */
@@ -150,43 +224,43 @@ header {
 .mood-tile.bored {
     background: linear-gradient(135deg, rgba(168, 237, 234, 0.8), rgba(254, 214, 227, 0.8), rgba(200, 220, 255, 0.8), rgba(180, 250, 240, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftBored 3s ease-in-out infinite;
+    animation: colorShiftBored 1.5s ease-in-out infinite;
     animation-delay: -0s;
 }
 
 .mood-tile.stressed {
-    background: linear-gradient(135deg, rgba(255, 250, 205, 0.8), rgba(230, 245, 200, 0.8), rgba(210, 235, 220, 0.8), rgba(240, 255, 230, 0.8));
+    background: linear-gradient(135deg, rgba(255, 240, 180, 0.8), rgba(200, 245, 200, 0.8), rgba(180, 220, 255, 0.8), rgba(255, 255, 200, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftStressed 3s ease-in-out infinite;
-    animation-delay: -0.5s;
+    animation: colorShiftStressed 1.5s ease-in-out infinite;
+    animation-delay: -0.25s;
 }
 
 .mood-tile.creative {
-    background: linear-gradient(135deg, rgba(255, 220, 200, 0.8), rgba(255, 230, 210, 0.8), rgba(255, 215, 195, 0.8), rgba(255, 235, 220, 0.8));
+    background: linear-gradient(135deg, rgba(255, 200, 170, 0.8), rgba(255, 230, 200, 0.8), rgba(255, 190, 160, 0.8), rgba(255, 220, 190, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftCreative 3s ease-in-out infinite;
-    animation-delay: -1s;
+    animation: colorShiftCreative 1.5s ease-in-out infinite;
+    animation-delay: -0.5s;
 }
 
 .mood-tile.curious {
     background: linear-gradient(135deg, rgba(180, 240, 255, 0.8), rgba(253, 219, 146, 0.8), rgba(209, 253, 255, 0.8), rgba(255, 240, 160, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftCurious 3s ease-in-out infinite;
-    animation-delay: -1.5s;
+    animation: colorShiftCurious 1.5s ease-in-out infinite;
+    animation-delay: -0.75s;
 }
 
 .mood-tile.silly {
     background: linear-gradient(135deg, rgba(230, 180, 255, 0.8), rgba(251, 194, 235, 0.8), rgba(166, 193, 238, 0.8), rgba(255, 200, 250, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftSilly 3s ease-in-out infinite;
-    animation-delay: -2s;
+    animation: colorShiftSilly 1.5s ease-in-out infinite;
+    animation-delay: -1s;
 }
 
 .mood-tile.competitive {
     background: linear-gradient(135deg, rgba(255, 200, 180, 0.8), rgba(255, 190, 200, 0.8), rgba(255, 235, 180, 0.8), rgba(255, 210, 190, 0.8));
     background-size: 300% 300%;
-    animation: colorShiftCompetitive 3s ease-in-out infinite;
-    animation-delay: -2.5s;
+    animation: colorShiftCompetitive 1.5s ease-in-out infinite;
+    animation-delay: -1.25s;
 }
 
 /* Hover Effect */
@@ -202,7 +276,7 @@ header {
     align-items: center;
     height: 200px;
     margin-bottom: 20px;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 15px;
 }
 
@@ -219,10 +293,12 @@ header {
 
 .mood-tile h3 {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     color: #555;
-    font-weight: 600;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
     transition: color 0.3s ease;
+    letter-spacing: 1px;
 }
 
 .mood-tile:hover h3 {
