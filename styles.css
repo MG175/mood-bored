@@ -59,12 +59,12 @@ header {
     font-family: 'Abril Fatface', serif;
     font-size: 5rem;
     font-weight: 400;
-    background: linear-gradient(45deg, #ffb3d9, #c4b3ff, #a8d7ff, #b3e8c4, #ffe8b3);
+    background: linear-gradient(45deg, #85d19f, #a585ff, #ffa366, #85d19f, #a585ff);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradientText 8s ease infinite, textStroke 7s linear infinite;
+    animation: gradientText 25s ease infinite, textStroke 7s linear infinite;
     margin-bottom: 15px;
     filter: drop-shadow(0 4px 15px rgba(180, 148, 255, 0.4));
     letter-spacing: 6px;
@@ -72,12 +72,12 @@ header {
 }
 
 @keyframes textStroke {
-    0% { -webkit-text-stroke-color: #e866b8; }
-    20% { -webkit-text-stroke-color: #d9b520; }
-    40% { -webkit-text-stroke-color: #5edbb5; }
-    60% { -webkit-text-stroke-color: #5aa5e6; }
-    80% { -webkit-text-stroke-color: #9e85e6; }
-    100% { -webkit-text-stroke-color: #e866b8; }
+    0% { -webkit-text-stroke-color: #c93d95; }
+    20% { -webkit-text-stroke-color: #b89200; }
+    40% { -webkit-text-stroke-color: #3db892; }
+    60% { -webkit-text-stroke-color: #2d7dc2; }
+    80% { -webkit-text-stroke-color: #7a5fc7; }
+    100% { -webkit-text-stroke-color: #c93d95; }
 }
 
 @keyframes gradientText {
