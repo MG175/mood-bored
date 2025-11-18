@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     tile.classList.remove('revealing');
                     if (overlay) overlay.remove();
                 }
-            }, 2500); // timing matches the CSS animation
+            }, 1500); // timing matches the CSS animation
         });
 
         // Optional: tiny press feedback on mouse down/up
