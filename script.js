@@ -1,4 +1,22 @@
+// ========== IMMEDIATE SCROLL TO TOP ==========
+// Force scroll to top immediately
+window.scrollTo(0, 0);
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+
+// Also on DOMContentLoaded (fires earlier than load)
+document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+});
+
 // ========== PAGE LOAD BEHAVIOR ==========
+
+// Prevent scroll restoration on page reload
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
 
 // Reset tiles function
 function resetAllTiles() {
@@ -18,6 +36,8 @@ function resetAllTiles() {
 // Fade in mood tiles with a nice stagger on page load
 window.addEventListener('load', () => {
     window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     resetAllTiles();
 
     const moodTiles = document.querySelectorAll('.mood-tile');
