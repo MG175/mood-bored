@@ -354,8 +354,11 @@ body::before {
 
 .result-message.correct {
     color: #00ff00;
-    text-shadow: 
-        0 0 8px #00ff00;
+    text-shadow: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .result-colors {
