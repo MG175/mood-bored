@@ -1,22 +1,25 @@
 /* ========== CSS VARIABLES ========== */
 :root {
-    /* Color palette */
     --purple-primary: #b494ff;
     --purple-dark: #4a3a9e;
     --pink-light: #ffc4e1;
     --blue-light: #c4e7ff;
     --green-light: #d4f4dd;
+    --orange-soft: #ffc9a3;
     --yellow-light: #fff4d6;
-    
-    /* Shadows */
+
     --shadow-normal: 0 10px 30px rgba(0, 0, 0, 0.15);
     --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.2);
-    
-    /* Transitions */
+
     --transition-smooth: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* ========== GLOBAL STYLES ========== */
+/* ========== IMPORT FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+/* ========== GLOBAL RESET ========== */
 * {
     margin: 0;
     padding: 0;
@@ -26,15 +29,17 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
-    background: linear-gradient(135deg,
-        var(--pink-light) 0%,
-        #e7d4ff 25%,
-        var(--blue-light) 50%,
-        var(--green-light) 75%,
-        var(--yellow-light) 100%);
+    background: linear-gradient(
+        135deg,
+        var(--pink-light),
+        #e7d4ff,
+        var(--blue-light),
+        var(--green-light),
+        var(--yellow-light)
+    );
     background-size: 400% 400%;
     animation: gradientShift 5s ease infinite;
-    padding: 20px;
+    padding: 24px;
 }
 
 @keyframes gradientShift {
@@ -44,51 +49,47 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1040px;
     margin: 0 auto;
 }
 
 /* ========== HEADER ========== */
 header {
     text-align: center;
-    margin-bottom: 60px;
-    padding-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 24px;
 }
 
+/* ===== TITLE (Poppins 900 + Green/Orange/Blue Gradient) ===== */
 .title {
-    font-family: 'Abril Fatface', serif;
-    font-size: 5rem;
-    font-weight: 400;
-    background: linear-gradient(45deg, #85d19f, #a585ff, #ffa366, #85d19f, #a585ff);
-    background-size: 300% 300%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-size: 2.9rem;
+
+    background: linear-gradient(
+        45deg,
+        #30ff7f,   /* Bright Green */
+        #ffae3d,   /* Orange */
+        #7bd5ff    /* Light Blue */
+    );
+    background-size: 100% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientText 25s ease infinite, textStroke 7s linear infinite;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 4px 15px rgba(180, 148, 255, 0.4));
-    letter-spacing: 6px;
-    -webkit-text-stroke-width: 1.75px;
+
+    -webkit-text-stroke: 0.7px #2e1b73; /* Thin purple outline */
+
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.6),
+        0 0 8px rgba(255, 255, 255, 0.35);
 }
 
-@keyframes textStroke {
-    0% { -webkit-text-stroke-color: #c93d95; }
-    20% { -webkit-text-stroke-color: #b89200; }
-    40% { -webkit-text-stroke-color: #3db892; }
-    60% { -webkit-text-stroke-color: #2d7dc2; }
-    80% { -webkit-text-stroke-color: #7a5fc7; }
-    100% { -webkit-text-stroke-color: #c93d95; }
-}
-
-@keyframes gradientText {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
+/* Subtitle */
 .subtitle {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.8rem;
+    font-size: 2rem;
     color: var(--purple-dark);
     font-weight: 500;
     text-shadow:
@@ -108,276 +109,276 @@ header {
     100% { color: var(--purple-dark); }
 }
 
-/* ========== MOOD BOARD GRID ========== */
+/* ========== MOOD GRID ========== */
 .mood-board {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    padding: 10px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* ========== MOOD TILES ========== */
 .mood-tile {
     backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 50px 30px;
+    border-radius: 14px;
+    padding: 32px 22px;
     cursor: pointer;
-    transition: transform var(--transition-smooth), box-shadow 0.4s ease;
+    transition: transform var(--transition-smooth), box-shadow 0.4s ease, opacity 0.25s ease;
     box-shadow: var(--shadow-normal),
-                0 0 0 3px rgba(255, 255, 255, 0.8),
-                0 0 0 6px rgba(180, 148, 255, 0.3);
-    border: 3px solid rgba(180, 148, 255, 0.6);
+                0 0 0 2px rgba(255, 255, 255, 0.9),
+                0 0 0 4px rgba(180, 148, 255, 0.25);
+    border: 2px solid rgba(180, 148, 255, 0.6);
     position: relative;
     overflow: hidden;
+    transform-origin: center;
 }
 
-/* Decorative borders */
+.mood-tile.pressed {
+    transform: translateY(2px) scale(0.97);
+}
+
+/* Inner borders */
 .mood-tile::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border: 2px solid rgba(180, 148, 255, 0.4);
-    border-radius: 8px;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 2px solid rgba(180, 148, 255, 0.35);
+    border-radius: 9px;
     pointer-events: none;
 }
 
 .mood-tile::after {
-    content: '';
+    content: "";
     position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
     pointer-events: none;
 }
 
-/* Pinterest-style scattered positioning */
-.mood-tile:nth-child(1) {
-    transform: rotate(-2deg);
-}
+/* Scattered layout */
+.mood-tile:nth-child(1) { transform: rotate(-1.5deg); }
+.mood-tile:nth-child(2) { transform: rotate(1deg); margin-top: 18px; }
+.mood-tile:nth-child(3) { transform: rotate(-0.8deg); }
+.mood-tile:nth-child(4) { transform: rotate(1.5deg); margin-top: -12px; }
+.mood-tile:nth-child(5) { transform: rotate(-1.2deg); margin-top: 24px; }
+.mood-tile:nth-child(6) { transform: rotate(1.2deg); }
 
-.mood-tile:nth-child(2) {
-    transform: rotate(1deg);
-    margin-top: 30px;
-}
-
-.mood-tile:nth-child(3) {
-    transform: rotate(-1deg);
-}
-
-.mood-tile:nth-child(4) {
-    transform: rotate(2deg);
-    margin-top: -20px;
-}
-
-.mood-tile:nth-child(5) {
-    transform: rotate(-1.5deg);
-    margin-top: 40px;
-}
-
-.mood-tile:nth-child(6) {
-    transform: rotate(1.5deg);
-}
-
-/* Hover effect */
+/* Hover */
 .mood-tile:hover {
-    transform: translateY(-10px) rotate(0deg) scale(1.05);
+    transform: translateY(-8px) rotate(0deg) scale(1.04);
     box-shadow: var(--shadow-hover);
 }
 
-/* ========== TILE COLOR ANIMATIONS ========== */
+/* ========== TILE BACKGROUNDS ========== */
 @keyframes colorShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%,100% { background-position: 0% 50%; }
+    50%     { background-position: 100% 50%; }
 }
 
 .mood-tile.bored {
     background: linear-gradient(135deg, 
-        rgba(168, 237, 234, 0.8), 
-        rgba(254, 214, 227, 0.8), 
-        rgba(200, 220, 255, 0.8), 
-        rgba(180, 250, 240, 0.8));
+        rgba(168,237,234,0.8),
+        rgba(254,214,227,0.8),
+        rgba(200,220,255,0.8),
+        rgba(180,250,240,0.8));
     background-size: 300% 300%;
     animation: colorShift 1.5s ease-in-out infinite;
-    animation-delay: 0s;
 }
 
 .mood-tile.stressed {
-    background: linear-gradient(135deg, 
-        rgba(255, 240, 180, 0.8), 
-        rgba(200, 245, 200, 0.8), 
-        rgba(180, 220, 255, 0.8), 
-        rgba(255, 255, 200, 0.8));
-    background-size: 300% 300%;
+    background: linear-gradient(135deg,
+        rgba(255,240,180,0.8), 
+        rgba(200,245,200,0.8), 
+        rgba(180,220,255,0.8), 
+        rgba(255,255,200,0.8));
     animation: colorShift 1.5s ease-in-out infinite;
     animation-delay: 0.25s;
+    background-size: 300% 300%;
 }
 
 .mood-tile.creative {
-    background: linear-gradient(135deg, 
-        rgba(255, 200, 170, 0.8), 
-        rgba(255, 230, 200, 0.8), 
-        rgba(255, 190, 160, 0.8), 
-        rgba(255, 220, 190, 0.8));
-    background-size: 300% 300%;
+    background: linear-gradient(135deg,
+        rgba(255,200,170,0.8), 
+        rgba(255,230,200,0.8), 
+        rgba(255,190,160,0.8), 
+        rgba(255,220,190,0.8));
     animation: colorShift 1.5s ease-in-out infinite;
     animation-delay: 0.5s;
+    background-size: 300% 300%;
 }
 
 .mood-tile.curious {
-    background: linear-gradient(135deg, 
-        rgba(180, 240, 255, 0.8), 
-        rgba(253, 219, 146, 0.8), 
-        rgba(209, 253, 255, 0.8), 
-        rgba(255, 240, 160, 0.8));
-    background-size: 300% 300%;
+    background: linear-gradient(135deg,
+        rgba(180,240,255,0.8), 
+        rgba(253,219,146,0.8), 
+        rgba(209,253,255,0.8), 
+        rgba(255,240,160,0.8));
     animation: colorShift 1.5s ease-in-out infinite;
     animation-delay: 0.75s;
+    background-size: 300% 300%;
 }
 
 .mood-tile.silly {
-    background: linear-gradient(135deg, 
-        rgba(230, 180, 255, 0.8), 
-        rgba(251, 194, 235, 0.8), 
-        rgba(166, 193, 238, 0.8), 
-        rgba(255, 200, 250, 0.8));
-    background-size: 300% 300%;
+    background: linear-gradient(135deg,
+        rgba(230,180,255,0.8), 
+        rgba(251,194,235,0.8), 
+        rgba(166,193,238,0.8), 
+        rgba(255,200,250,0.8));
     animation: colorShift 1.5s ease-in-out infinite;
     animation-delay: 1s;
+    background-size: 300% 300%;
 }
 
 .mood-tile.competitive {
-    background: linear-gradient(135deg, 
-        rgba(255, 200, 180, 0.8), 
-        rgba(255, 190, 200, 0.8), 
-        rgba(255, 235, 180, 0.8), 
-        rgba(255, 210, 190, 0.8));
-    background-size: 300% 300%;
+    background: linear-gradient(135deg,
+        rgba(255,200,180,0.8), 
+        rgba(255,190,200,0.8), 
+        rgba(255,235,180,0.8), 
+        rgba(255,210,190,0.8));
     animation: colorShift 1.5s ease-in-out infinite;
     animation-delay: 1.25s;
+    background-size: 300% 300%;
 }
 
-/* ========== IMAGE STYLING ========== */
+/* ========== TILE IMAGES ========== */
 .symbol {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    margin-bottom: 20px;
-    overflow: visible;
-    border-radius: 15px;
+    height: 160px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 14px;
+    transition: opacity 0.25s ease, transform 0.3s ease;
 }
 
 .symbol img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .mood-tile:hover .symbol img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* ========== TEXT STYLING ========== */
+/* ========== TILE LABELS ========== */
 .mood-tile h3 {
-    text-align: center;
-    font-size: 1.9rem;
-    color: #555;
-    font-weight: 500;
     font-family: 'Quicksand', sans-serif;
-    transition: color 0.3s ease;
+    text-align: center;
+    font-size: 1.6rem;
+    color: #555;
     letter-spacing: 1px;
+    font-weight: 500;
+    transition: color 0.3s ease, opacity 0.25s ease;
 }
 
 .mood-tile:hover h3 {
     color: #333;
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
+/* ==========================================================
+   ✨ DRAMATIC CARD FLIP REVEAL + MATCHING BACKGROUND
+   ========================================================== */
+
+/* Dramatic flip state */
+.mood-tile.revealing {
+    transform: translateY(-12px) scale(1.08) rotateX(22deg);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* 🔥 Hide the original picture + mood name when flipped */
+.mood-tile.revealing .symbol,
+.mood-tile.revealing h3 {
+    opacity: 0;
+}
+
+/* Overlay message USING the tile's own gradient */
+.mood-overlay {
+    position: absolute;
+    inset: 14px;
+    border-radius: 12px;
+
+    background: inherit;                /* Use tile gradient */
+    backdrop-filter: brightness(1.15);  /* Slightly brighten for readability */
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    text-align: center;
+
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.05rem;
+    color: #333;
+
+    z-index: 5;
+    pointer-events: none;
+
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Fade/slide in the overlay */
+.mood-tile.revealing .mood-overlay {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-    header {
-        margin-bottom: 40px;
-        padding-top: 20px;
-    }
-
     .title {
-        font-size: 3.5rem;
-        letter-spacing: 3px;
-        margin-bottom: 10px;
-        -webkit-text-stroke-width: 1.25px;
+        font-size: 2.4rem;
     }
-
     .subtitle {
-        font-size: 1.9rem;
+        font-size: 1.6rem;
     }
-
     .mood-board {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding: 10px;
         max-width: 260px;
-        margin: 0 auto;
     }
-
     .mood-tile {
         transform: rotate(0deg) !important;
         margin-top: 0 !important;
-        padding: 30px 20px;
-    }
-
-    .symbol {
-        height: 200px;
-        margin-bottom: 5px;
-    }
-
-    .symbol img {
-        width: 95%;
-        height: 95%;
-        object-fit: contain;
-    }
-
-    .mood-tile h3 {
-        font-size: 1.5rem;
+        padding: 28px 18px;
     }
 }
 
-/* Extra small screens */
 @media (max-width: 480px) {
     .title {
-        font-size: 2.8rem;
-        letter-spacing: 2px;
-        -webkit-text-stroke-width: 0.85px;
-    }
-
-    .subtitle {
         font-size: 2rem;
+        letter-spacing: 2px;
     }
-
+    .subtitle {
+        font-size: 1.4rem;
+    }
     .mood-board {
         max-width: 240px;
     }
-
     .mood-tile {
-        padding: 25px 15px;
+        padding: 24px 14px;
     }
-
     .symbol {
         height: 160px;
-        margin-bottom: 3px;
     }
-
     .symbol img {
         width: 90%;
         height: 90%;
-        object-fit: contain;
     }
-
     .mood-tile h3 {
         font-size: 1.3rem;
     }

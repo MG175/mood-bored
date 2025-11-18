@@ -3,68 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood-Bored | Pick Your Vibe</title>
-    <!-- Only loading fonts we actually use -->
+    <title>Shade Memory Challenge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@500&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Back to Moods Button -->
+    <a href="../../index.html" class="back-to-moods">← BACK TO MOODS</a>
+    
     <div class="container">
-        <header>
-            <h1 class="title">Mood-Bored</h1>
-            <p class="subtitle">How are ya feeling?</p>
-        </header>
-
-        <div class="mood-board">
-            <!-- Bored Tile -->
-            <div class="mood-tile bored" data-mood="bored">
-                <div class="symbol">
-                    <img src="images/bored.png" alt="Bored">
-                </div>
-                <h3>Bored</h3>
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1 class="glitch" data-text="SHADE MEMORY">SHADE MEMORY</h1>
+            <p class="subtitle">Test your color perception</p>
+            <button id="start-btn" class="y2k-btn">START CHALLENGE</button>
+            <div class="instructions">
+                <p>⚠️ You'll see a color for 5 seconds</p>
+                <p>💾 Memorize the exact shade</p>
+                <p>🎯 Find it among 400 similar colors</p>
             </div>
+        </div>
 
-            <!-- Stressed Tile -->
-            <div class="mood-tile stressed" data-mood="stressed">
-                <div class="symbol">
-                    <img src="images/stressed.png" alt="Stressed">
-                </div>
-                <h3>Stressed</h3>
-            </div>
+        <!-- Memorize Screen -->
+        <div id="memorize-screen" class="screen">
+            <h2 class="flash-text">MEMORIZE THIS SHADE!</h2>
+            <div id="target-color" class="color-display"></div>
+            <div id="timer" class="timer">5</div>
+        </div>
 
-            <!-- Creative Tile -->
-            <div class="mood-tile creative" data-mood="creative">
-                <div class="symbol">
-                    <img src="images/creative.png" alt="Creative">
-                </div>
-                <h3>Creative</h3>
-            </div>
+        <!-- Countdown Screen -->
+        <div id="countdown-screen" class="screen">
+            <div id="countdown" class="countdown">3</div>
+        </div>
 
-            <!-- Curious Tile -->
-            <div class="mood-tile curious" data-mood="curious">
-                <div class="symbol">
-                    <img src="images/curious.png" alt="Curious">
-                </div>
-                <h3>Curious</h3>
-            </div>
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <h2 class="game-title">FIND THE SHADE</h2>
+            <div id="color-grid" class="color-grid"></div>
+        </div>
 
-            <!-- Silly Tile -->
-            <div class="mood-tile silly" data-mood="silly">
-                <div class="symbol">
-                    <img src="images/silly.png" alt="Silly">
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <h2 id="result-message" class="result-message"></h2>
+            <div id="result-colors" class="result-colors">
+                <div class="result-item">
+                    <p>YOUR CHOICE</p>
+                    <div id="your-choice" class="result-square"></div>
                 </div>
-                <h3>Silly</h3>
-            </div>
-
-            <!-- Competitive Tile -->
-            <div class="mood-tile competitive" data-mood="competitive">
-                <div class="symbol">
-                    <img src="images/competitive.png" alt="Competitive">
+                <div class="result-item">
+                    <p>CORRECT SHADE</p>
+                    <div id="correct-choice" class="result-square"></div>
                 </div>
-                <h3>Competitive</h3>
             </div>
+            <button id="play-again-btn" class="y2k-btn">PLAY AGAIN</button>
         </div>
     </div>
 
