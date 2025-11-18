@@ -68,10 +68,10 @@ header {
 
     background: linear-gradient(
         90deg,
-        #8fffd7 0%,    /* Pastel Mint Green */
-        #7dffc4 25%,   /* Soft Mint */
-        #ffb88c 70%,   /* Pastel Orange */
-        #ffa87a 100%   /* Soft Peach Orange */
+        #a8ffe3 0%,    /* Very Pastel Mint Green */
+        #9dffe0 25%,   /* Lighter Soft Mint */
+        #ffc9a8 70%,   /* Lighter Pastel Orange */
+        #ffbfa0 100%   /* Very Soft Peach */
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
