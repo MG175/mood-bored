@@ -340,6 +340,10 @@ body::before {
 .result-message.wrong {
     color: #ff0000;
     text-shadow: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes resultPop {
@@ -460,8 +464,9 @@ body::before {
     }
     
     .result-message {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-bottom: 40px;
+        letter-spacing: 2px;
     }
     
     .result-item p {
@@ -474,10 +479,13 @@ body::before {
         height: min(50vw, 200px);
     }
     
+    #countdown-screen {
+        padding-top: 80px;
+    }
+
     .countdown {
         font-size: 5rem;
-        margin-top: 80px;
-    }
+        margin-top: 0;
     }
 }
 
@@ -540,14 +548,23 @@ body::before {
     .result-colors {
         padding: 0 10px;
     }
+
+    .result-message {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+    }
     
     .result-square {
         width: min(60vw, 150px);
         height: min(60vw, 150px);
     }
 
+    #countdown-screen {
+        padding-top: 100px;
+    }
+
     .countdown {
-        margin-top: 100px;
+        margin-top: 0;
     }
     
     .game-title {
