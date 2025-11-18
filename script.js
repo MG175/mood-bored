@@ -1,11 +1,9 @@
 // ========== PAGE LOAD BEHAVIOR ==========
 
-// Fade in mood tiles with a nice stagger on page load
-window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-
+// Reset tiles function
+function resetAllTiles() {
     const moodTiles = document.querySelectorAll('.mood-tile');
-    moodTiles.forEach((tile, index) => {
+    moodTiles.forEach((tile) => {
         // Reset any revealing state from previous navigation
         tile.classList.remove('revealing', 'pressed');
         
@@ -14,7 +12,16 @@ window.addEventListener('load', () => {
         if (overlay) {
             overlay.remove();
         }
-        
+    });
+}
+
+// Fade in mood tiles with a nice stagger on page load
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    resetAllTiles();
+
+    const moodTiles = document.querySelectorAll('.mood-tile');
+    moodTiles.forEach((tile, index) => {
         tile.style.opacity = '0';
 
         setTimeout(() => {
@@ -22,6 +29,24 @@ window.addEventListener('load', () => {
             tile.style.opacity = '1';
         }, index * 100);
     });
+});
+
+// Handle back button - pageshow event fires when page is restored from cache
+window.addEventListener('pageshow', (event) => {
+    // If page was restored from cache (back button)
+    if (event.persisted) {
+        resetAllTiles();
+        
+        // Re-fade in tiles
+        const moodTiles = document.querySelectorAll('.mood-tile');
+        moodTiles.forEach((tile, index) => {
+            tile.style.opacity = '0';
+            setTimeout(() => {
+                tile.style.transition = 'opacity 0.6s ease';
+                tile.style.opacity = '1';
+            }, index * 100);
+        });
+    }
 });
 
 // ========== MOOD CARD REVEAL LOGIC ==========
