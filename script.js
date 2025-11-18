@@ -6,6 +6,15 @@ window.addEventListener('load', () => {
 
     const moodTiles = document.querySelectorAll('.mood-tile');
     moodTiles.forEach((tile, index) => {
+        // Reset any revealing state from previous navigation
+        tile.classList.remove('revealing', 'pressed');
+        
+        // Remove any overlay that might be left over
+        const overlay = tile.querySelector('.mood-overlay');
+        if (overlay) {
+            overlay.remove();
+        }
+        
         tile.style.opacity = '0';
 
         setTimeout(() => {

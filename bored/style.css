@@ -344,6 +344,7 @@ body::before {
     font-weight: 900;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    white-space: normal;
 }
 
 @keyframes resultPop {
