@@ -34,19 +34,24 @@ body {
     top: 15px;
     left: 15px;
     z-index: 1000;
-    padding: 8px 14px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(185, 103, 255, 0.4);
+    padding: 12px 18px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(185, 103, 255, 0.6);
     border-radius: 4px;
-    color: rgba(0, 217, 255, 0.8);
+    color: rgba(0, 217, 255, 0.9);
     text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
     backdrop-filter: blur(8px);
     box-shadow: 0 0 10px rgba(185, 103, 255, 0.2);
-    opacity: 0.7;
+    opacity: 0.9;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .back-to-moods:hover {
@@ -402,25 +407,25 @@ body::before {
 /* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
     body {
-        padding: 40px 0 0 0;
+        padding: 70px 0 0 0;
         align-items: flex-start;
     }
 
     .container {
-        padding: 10px 20px;
+        padding: 20px 20px;
         margin-top: 0;
     }
 
     #memorize-screen {
-        padding: 0 20px;
+        padding: 10px 20px;
     }
 
     #game-screen {
-        padding: 0 20px;
+        padding: 10px 20px;
     }
 
     .flash-text {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         margin-top: 0;
     }
 
@@ -477,28 +482,28 @@ body::before {
 
 @media (max-width: 480px) {
     body {
-        padding: 35px 0 0 0;
+        padding: 75px 0 0 0;
     }
 
     .container {
-        padding: 5px 20px;
+        padding: 15px 20px;
     }
 
     #memorize-screen {
-        padding: 0 20px;
+        padding: 10px 20px;
     }
 
     #game-screen {
-        padding: 0 20px;
+        padding: 10px 20px;
     }
 
     .flash-text {
-        margin-bottom: 3px;
+        margin-bottom: 8px;
         font-size: 1.5rem;
     }
 
     .game-title {
-        margin-bottom: 3px;
+        margin-bottom: 8px;
     }
 
     .timer {
