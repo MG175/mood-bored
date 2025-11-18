@@ -111,9 +111,7 @@ body::before {
     font-weight: 900;
     color: var(--neon-pink);
     text-shadow: 
-        0 0 10px var(--neon-pink),
-        0 0 20px var(--neon-pink),
-        0 0 30px var(--neon-pink),
+        0 0 5px var(--neon-pink),
         3px 3px 0 var(--neon-blue),
         -3px -3px 0 var(--cyber-yellow);
     margin-bottom: 20px;
@@ -291,9 +289,9 @@ body::before {
 
 .color-grid {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     gap: 3px;
-    width: min(90vw, 750px);
+    width: min(90vw, 600px);
     margin: 0 auto;
     padding: 0;
     background: transparent;
@@ -337,8 +335,7 @@ body::before {
 .result-message.wrong {
     color: #ff0000;
     text-shadow: 
-        0 0 20px #ff0000,
-        0 0 40px #ff0000;
+        0 0 8px #ff0000;
 }
 
 @keyframes resultPop {
@@ -350,8 +347,7 @@ body::before {
 .result-message.correct {
     color: #00ff00;
     text-shadow: 
-        0 0 20px #00ff00,
-        0 0 40px #00ff00;
+        0 0 8px #00ff00;
 }
 
 .result-colors {
@@ -405,6 +401,34 @@ body::before {
 
 /* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
+    body {
+        padding: 40px 0 0 0;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 10px 20px;
+        margin-top: 0;
+    }
+
+    #memorize-screen {
+        padding: 0 20px;
+    }
+
+    #game-screen {
+        padding: 0 20px;
+    }
+
+    .flash-text {
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+
+    .game-title {
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+
     .glitch {
         font-size: 2.5rem;
     }
@@ -412,11 +436,11 @@ body::before {
     .color-display {
         width: min(70vw, 300px);
         height: min(70vw, 300px);
-        margin: 0 auto;
+        margin: 5px auto;
     }
     
     .color-grid {
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(8, 1fr);
         width: 80vw;
         max-width: 400px;
         margin: 0 auto;
@@ -452,6 +476,36 @@ body::before {
 }
 
 @media (max-width: 480px) {
+    body {
+        padding: 35px 0 0 0;
+    }
+
+    .container {
+        padding: 5px 20px;
+    }
+
+    #memorize-screen {
+        padding: 0 20px;
+    }
+
+    #game-screen {
+        padding: 0 20px;
+    }
+
+    .flash-text {
+        margin-bottom: 3px;
+        font-size: 1.5rem;
+    }
+
+    .game-title {
+        margin-bottom: 3px;
+    }
+
+    .timer {
+        font-size: 3rem;
+        margin-top: 5px;
+    }
+
     .glitch {
         font-size: 1.8rem;
         letter-spacing: 2px;
@@ -464,11 +518,11 @@ body::before {
     .color-display {
         width: min(70vw, 250px);
         height: min(70vw, 250px);
-        margin: 0 auto;
+        margin: 3px auto;
     }
     
     .color-grid {
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         width: 75vw;
         max-width: 320px;
         margin: 0 auto;
@@ -482,10 +536,6 @@ body::before {
     .result-square {
         width: min(60vw, 150px);
         height: min(60vw, 150px);
-    }
-    
-    .timer {
-        font-size: 3rem;
     }
     
     .game-title {

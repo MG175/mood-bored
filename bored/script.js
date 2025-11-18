@@ -60,12 +60,12 @@ function generateSimilarColors(target, count) {
     // Add the target color
     colors.push({ ...target, isTarget: true });
     
-    // Generate similar colors with even easier variations
+    // EVEN EASIER: Generate colors with BIGGER variations (very noticeable differences)
     for (let i = 0; i < count - 1; i++) {
-        // Even easier variations (±11 for hue, ±22 for saturation, ±18 for lightness)
-        const h = Math.max(0, Math.min(360, target.h + (Math.random() * 22 - 11)));
-        const s = Math.max(0, Math.min(100, target.s + (Math.random() * 44 - 22)));
-        const l = Math.max(0, Math.min(100, target.l + (Math.random() * 36 - 18)));
+        // EVEN EASIER variations: ±25 for hue, ±45 for saturation, ±35 for lightness
+        const h = Math.max(0, Math.min(360, target.h + (Math.random() * 50 - 25)));
+        const s = Math.max(0, Math.min(100, target.s + (Math.random() * 90 - 45)));
+        const l = Math.max(0, Math.min(100, target.l + (Math.random() * 70 - 35)));
         
         colors.push({ h, s, l, isTarget: false });
     }
@@ -133,14 +133,23 @@ function showGameScreen() {
     
     // Detect screen size and adjust grid
     const isMobile = window.innerWidth <= 480;
-    const colorCount = isMobile ? 64 : 90; // 8x8 for small mobile, 15x6 for desktop
+    const colorCount = isMobile ? 48 : 60; // 6x8 for mobile, 10x6 for desktop
     
     // Generate similar colors
     const colors = generateSimilarColors(targetColor, colorCount);
     
-    // Sort colors to create gradient - lightness from dark to light
+    // Sort colors to create a PERFECT SMOOTH GRADIENT
+    // Sort by: Hue first, then Saturation, then Lightness
     colors.sort((a, b) => {
-        // Sort primarily by lightness
+        // Primary sort: Hue (creates color families)
+        if (Math.abs(a.h - b.h) > 2) {
+            return a.h - b.h;
+        }
+        // Secondary sort: Saturation (intensity)
+        if (Math.abs(a.s - b.s) > 2) {
+            return a.s - b.s;
+        }
+        // Tertiary sort: Lightness (brightness)
         return a.l - b.l;
     });
     
