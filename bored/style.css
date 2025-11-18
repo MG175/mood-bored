@@ -322,7 +322,7 @@ body::before {
 
 /* ========== RESULT SCREEN ========== */
 #result-screen {
-    padding: 5px 20px 30px 20px;
+    padding: 0 20px 30px 20px;
 }
 
 .result-message {
@@ -339,8 +339,7 @@ body::before {
 
 .result-message.wrong {
     color: #ff0000;
-    text-shadow: 
-        0 0 8px #ff0000;
+    text-shadow: none;
 }
 
 @keyframes resultPop {
@@ -477,6 +476,8 @@ body::before {
     
     .countdown {
         font-size: 5rem;
+        margin-top: 80px;
+    }
     }
 }
 
@@ -543,6 +544,10 @@ body::before {
     .result-square {
         width: min(60vw, 150px);
         height: min(60vw, 150px);
+    }
+
+    .countdown {
+        margin-top: 100px;
     }
     
     .game-title {

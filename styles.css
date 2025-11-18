@@ -344,7 +344,7 @@ header {
         font-size: 2.4rem;
     }
     .subtitle {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
     .mood-board {
         grid-template-columns: 1fr;
@@ -364,7 +364,7 @@ header {
         letter-spacing: 2px;
     }
     .subtitle {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
     .mood-board {
         max-width: 240px;
