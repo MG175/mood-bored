@@ -443,7 +443,7 @@ body::before {
 
     .glitch {
         font-size: 2.5rem;
-        word-spacing: 12px;
+        word-spacing: 25px;
     }
     
     .color-display {
@@ -532,7 +532,7 @@ body::before {
     .glitch {
         font-size: 1.8rem;
         letter-spacing: 2px;
-        word-spacing: 10px;
+        word-spacing: 20px;
     }
     
     .subtitle {
