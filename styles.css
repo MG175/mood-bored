@@ -60,30 +60,29 @@ header {
     padding-top: 24px;
 }
 
-/* ===== TITLE (Poppins 900 + Green/Orange/Blue Gradient) ===== */
+/* ===== TITLE (Poppins 900 + Bright Mint to Orange Gradient) ===== */
 .title {
     font-family: "Poppins", sans-serif;
     font-weight: 900;
     font-size: 2.9rem;
 
     background: linear-gradient(
-        45deg,
-        #30ff7f,   /* Bright Green */
-        #ffae3d,   /* Orange */
-        #7bd5ff    /* Light Blue */
+        90deg,
+        #8fffd7 0%,    /* Pastel Mint Green */
+        #7dffc4 25%,   /* Soft Mint */
+        #ffb88c 70%,   /* Pastel Orange */
+        #ffa87a 100%   /* Soft Peach Orange */
     );
-    background-size: 100% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    -webkit-text-stroke: 0.7px #2e1b73; /* Thin purple outline */
+    background-clip: text;
+    color: transparent;
+    
+    -webkit-text-stroke: 1.5px #2e1b73;
+    text-stroke: 1.5px #2e1b73;
 
     letter-spacing: 2px;
     margin-bottom: 10px;
-
-    text-shadow:
-        0 0 5px rgba(255, 255, 255, 0.6),
-        0 0 8px rgba(255, 255, 255, 0.35);
 }
 
 /* Subtitle */
@@ -91,7 +90,7 @@ header {
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
     color: var(--purple-dark);
-    font-weight: 500;
+    font-weight: 700;
     text-shadow:
         -1px -1px 0 #fff,
          1px -1px 0 #fff,
