@@ -467,9 +467,11 @@ body::before {
     }
     
     .result-message {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-bottom: 40px;
         letter-spacing: 2px;
+        white-space: nowrap;
+    }
     }
     
     .result-item p {
@@ -553,8 +555,9 @@ body::before {
     }
 
     .result-message {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         letter-spacing: 1px;
+        white-space: nowrap;
     }
     
     .result-square {

@@ -189,7 +189,7 @@ function handleGuess(guessedIndex, guessedColor) {
         resultMessage.innerHTML = 'PERFECT!';
         resultMessage.className = 'result-message correct';
     } else {
-        resultMessage.innerHTML = 'SO<br>CLOSE!';
+        resultMessage.innerHTML = 'SO CLOSE!';
         resultMessage.className = 'result-message wrong';
     }
 }
