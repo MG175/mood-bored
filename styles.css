@@ -18,6 +18,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&wght@400;700&display=swap');
 
 /* ========== GLOBAL RESET ========== */
 * {
@@ -62,42 +64,44 @@ header {
 
 /* ===== TITLE (Poppins 900 + Bright Mint to Orange Gradient) ===== */
 .title {
-    font-family: "Poppins", sans-serif;
-    font-weight: 900;
-    font-size: 2.9rem;
+    font-family: 'Averia Serif Libre', serif;
+    font-weight: 700;
+    font-size: 3.6rem;
+    letter-spacing: 0.04em;
 
     background: linear-gradient(
         90deg,
-        #a8ffe3 0%,    /* Very Pastel Mint Green */
-        #9dffe0 25%,   /* Lighter Soft Mint */
-        #ffc9a8 70%,   /* Lighter Pastel Orange */
-        #ffbfa0 100%   /* Very Soft Peach */
+        #7fffd0 0%,
+        #a8ffe3 25%,
+        #ffc9a8 50%,
+        #9ecaff 75%,
+        #b494ff 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    
-    -webkit-text-stroke: 1.5px #2e1b73;
-    text-stroke: 1.5px #2e1b73;
 
-    letter-spacing: 2px;
+    -webkit-text-stroke: 0.6px #7c60d9;
+    text-stroke: 0.6px #7c60d9;
+
+    text-shadow: none;
     margin-bottom: 10px;
 }
 
+
 /* Subtitle */
 .subtitle {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'La Belle Aurore', cursive !important;
     font-size: 2rem;
+    font-weight: 400;
     color: var(--purple-dark);
-    font-weight: 700;
-    text-shadow:
-        -1px -1px 0 #fff,
-         1px -1px 0 #fff,
-        -1px  1px 0 #fff,
-         1px  1px 0 #fff;
+    letter-spacing: 0.5px;
+    word-spacing: 3px;
     animation: subtitleColorShift 10s ease infinite;
+    text-shadow: none;
 }
+
 
 @keyframes subtitleColorShift {
     0% { color: var(--purple-dark); }
@@ -206,14 +210,16 @@ header {
 
 .mood-tile.creative {
     background: linear-gradient(135deg,
-        rgba(255,200,170,0.8), 
-        rgba(255,230,200,0.8), 
-        rgba(255,190,160,0.8), 
-        rgba(255,220,190,0.8));
+        rgba(175,255,230,0.85),
+        rgba(255,220,200,0.85),
+        rgba(200,230,255,0.85),
+        rgba(255,235,215,0.85)
+    );
+    background-size: 300% 300%;
     animation: colorShift 1.5s ease-in-out infinite;
     animation-delay: 0.5s;
-    background-size: 300% 300%;
 }
+
 
 .mood-tile.curious {
     background: linear-gradient(135deg,
@@ -239,14 +245,16 @@ header {
 
 .mood-tile.intelligent {
     background: linear-gradient(135deg,
-        rgba(200,180,255,0.8), 
-        rgba(180,200,255,0.8), 
-        rgba(160,220,255,0.8), 
-        rgba(190,190,255,0.8));
-    animation: colorShift 1.5s ease-in-out infinite;
+        rgba(210, 200, 255, 0.85),
+        rgba(195, 235, 255, 0.85),
+        rgba(185, 255, 235, 0.85),
+        rgba(230, 210, 255, 0.85)
+    );
+    background-size: 320% 320%;
+    animation: colorShift 1.8s ease-in-out infinite;
     animation-delay: 1.25s;
-    background-size: 300% 300%;
 }
+
 
 /* ========== TILE IMAGES ========== */
 .symbol {
@@ -338,10 +346,33 @@ header {
 }
 
 /* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .title {
-        font-size: 3rem;
-    }
+    font-family: 'Averia Serif Libre', serif;
+    font-weight: 700;
+    font-size: 3.6rem;
+    letter-spacing: 0.04em;
+
+    background: linear-gradient(
+        90deg,
+        #7fffd0 0%,
+        #a8ffe3 25%,
+        #ffc9a8 50%,
+        #9ecaff 75%,
+        #b494ff 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    -webkit-text-stroke: 0.6px #7c60d9;
+    text-stroke: 0.6px #7c60d9;
+
+    text-shadow: none;
+    margin-bottom: 10px;
+}
+
     .subtitle {
         font-size: 2rem;
     }
@@ -359,9 +390,31 @@ header {
 
 @media (max-width: 480px) {
     .title {
-        font-size: 2.5rem;
-        letter-spacing: 2px;
-    }
+    font-family: 'Averia Serif Libre', serif;
+    font-weight: 700;
+    font-size: 3.6rem;
+    letter-spacing: 0.04em;
+
+    background: linear-gradient(
+        90deg,
+        #7fffd0 0%,
+        #a8ffe3 25%,
+        #ffc9a8 50%,
+        #9ecaff 75%,
+        #b494ff 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    -webkit-text-stroke: 0.6px #7c60d9;
+    text-stroke: 0.6px #7c60d9;
+
+    text-shadow: none;
+    margin-bottom: 10px;
+}
+
     .subtitle {
         font-size: 1.8rem;
     }
