@@ -75,12 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Short messages that show INSIDE the tile when clicked
     const moodMessages = {
-        bored:        "Let’s fix that. I’ve got ideas for you. ✨",
-        stressed:     "Deep breath. We’re about to soften the day. 🌿",
+        bored:        "Let's fix that. I've got ideas for you. ✨",
+        stressed:     "Deep breath. We're about to soften the day. 🌿",
         creative:     "Time to make something ridiculously cool. 🎨",
         curious:      "Follow the clues… something fun is next. 🔍",
-        silly:        "Hehehe okay, let’s get weird. 🤪",
-        competitive:  "Game on. Let’s see what you’ve got. 🏆"
+        silly:        "Hehehe okay, let's get weird. 🤪",
+        intelligent:  "Let's expand your mind. Knowledge awaits. 🧠"
     };
 
     // Where each mood sends you
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         creative:    'creative/index.html',
         curious:     'curious/index.html',
         silly:       'silly/index.html',
-        competitive: 'competitive/index.html'
+        intelligent: 'intelligent/index.html'
     };
 
     moodTiles.forEach((tile) => {
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tile.classList.contains('revealing')) return;
 
             const url = tile.dataset.url || moodUrls[mood];
-            const message = moodMessages[mood] || "Let’s go do something fun. ✨";
+            const message = moodMessages[mood] || "Let's go do something fun. ✨";
 
             // Make sure overlay exists or create it
             let overlay = tile.querySelector('.mood-overlay');
@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (url) {
                     window.location.href = url;
                 } else {
-                    // If you haven’t built that mood’s site yet
-                    alert(`${mood.toUpperCase()} mini-site coming soon!\n\nWe’re still building this one. 🚀`);
+                    // If you haven't built that mood's site yet
+                    alert(`${mood.toUpperCase()} mini-site coming soon!\n\nWe're still building this one. 🚀`);
                     tile.classList.remove('revealing');
                     if (overlay) overlay.remove();
                 }
