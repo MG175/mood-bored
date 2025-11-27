@@ -37,6 +37,24 @@
                 <p>Use logic clues to decode the sequence.</p>
                 <p>Each puzzle has exactly one solution.</p>
             </div>
+            <div class="difficulty-selector">
+                <div class="difficulty-label">SELECT DIFFICULTY</div>
+                <div class="difficulty-options">
+                    <button class="difficulty-btn active" data-difficulty="easy">
+                        <span class="diff-name">EASY</span>
+                        <span class="diff-desc">4 slots • Direct clues</span>
+                    </button>
+                    <button class="difficulty-btn" data-difficulty="medium">
+                        <span class="diff-name">MEDIUM</span>
+                        <span class="diff-desc">4 slots • Fewer hints</span>
+                    </button>
+                    <button class="difficulty-btn" data-difficulty="hard">
+                        <span class="diff-name">HARD</span>
+                        <span class="diff-desc">5 slots • Minimal clues</span>
+                    </button>
+                </div>
+            </div>
+
             <button id="start-btn" class="cyber-btn">
                 <span class="btn-text">BEGIN DECODING</span>
                 <span class="btn-glitch"></span>
@@ -49,6 +67,7 @@
                 <div class="puzzle-counter">
                     SIGNAL <span id="puzzle-num">1</span>
                 </div>
+                <div class="difficulty-display" id="difficulty-display">EASY</div>
                 <div class="streak-counter">
                     DECODED: <span id="streak">0</span>
                 </div>

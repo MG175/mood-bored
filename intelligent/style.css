@@ -273,6 +273,80 @@ body::before {
 }
 
 /* ========== CYBER BUTTON ========== */
+.difficulty-selector {
+    margin: 30px 0 40px;
+}
+
+.difficulty-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.difficulty-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.difficulty-btn {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+    text-align: center;
+}
+
+.difficulty-btn:hover {
+    border-color: var(--cyan-dim);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.difficulty-btn.active {
+    border-color: var(--cyan-glow);
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2), inset 0 0 15px rgba(0, 240, 255, 0.05);
+}
+
+.diff-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cyan-glow);
+    display: block;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.difficulty-btn:not(.active) .diff-name {
+    color: var(--text-dim);
+}
+
+.diff-desc {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    display: block;
+    letter-spacing: 1px;
+}
+
+.difficulty-display {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    padding: 5px 12px;
+    border: 1px solid var(--cyan-dim);
+    color: var(--cyan-glow);
+}
+
+.difficulty-display.easy { border-color: var(--green-signal); color: var(--green-signal); }
+.difficulty-display.medium { border-color: var(--amber-warning); color: var(--amber-warning); }
+.difficulty-display.hard { border-color: var(--red-alert); color: var(--red-alert); }
+
 .cyber-btn {
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
@@ -683,6 +757,29 @@ body::before {
     .subtitle {
         font-size: 0.75rem;
         letter-spacing: 2px;
+    }
+
+    .difficulty-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .difficulty-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .game-header {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .difficulty-display {
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
     }
 
     .slots-container {
