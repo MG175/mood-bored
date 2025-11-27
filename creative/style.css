@@ -360,17 +360,18 @@ body.brand-active .decorative-shapes {
     text-decoration: none;
     padding: 10px 18px;
     border-radius: 25px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     z-index: 10;
 }
 
 .back-to-moods:hover {
     background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     transform: translateY(-1px);
 }
 
@@ -763,8 +764,16 @@ body.brand-active .decorative-shapes {
     .back-to-moods {
         top: 16px;
         left: 16px;
-        padding: 6px 12px;
-        font-size: 0.75rem;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        /* Keep the prominent styling */
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        font-weight: 500;
+        color: var(--lab-text);
     }
     
     .logo-text {
@@ -837,10 +846,19 @@ body.brand-active .decorative-shapes {
     
     .back-to-moods {
         position: static;
-        display: block;
+        display: inline-block;
         text-align: left;
         margin-bottom: 16px;
         width: fit-content;
+        /* Keep the prominent styling */
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        padding: 10px 18px;
+        font-weight: 500;
+        color: var(--lab-text);
     }
     
     .lab-logo {
