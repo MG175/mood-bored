@@ -713,12 +713,23 @@ function getDarkColor(colors) {
         }
     });
     
-    // If the darkest color is still too light (luminance > 0.4), return a dark fallback
-    if (minLuminance > 0.4) {
-        return '#2d2d2d';
+    // Be more aggressive - if darkest color luminance > 0.3, use dark fallback
+    // This ensures text is always readable
+    if (minLuminance > 0.3) {
+        return '#1a1a1a';
     }
     
-    return darkest.hex;
+    // Even if we have a dark color, make it darker for better contrast
+    const r = parseInt(darkest.hex.slice(1, 3), 16);
+    const g = parseInt(darkest.hex.slice(3, 5), 16);
+    const b = parseInt(darkest.hex.slice(5, 7), 16);
+    
+    // Darken the color by 30%
+    const darkerR = Math.floor(r * 0.7);
+    const darkerG = Math.floor(g * 0.7);
+    const darkerB = Math.floor(b * 0.7);
+    
+    return `#${darkerR.toString(16).padStart(2, '0')}${darkerG.toString(16).padStart(2, '0')}${darkerB.toString(16).padStart(2, '0')}`;
 }
 
 // ========== BRAND GENERATION ==========
