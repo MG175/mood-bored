@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Branding Lab | Craft Your Visual Identity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Dynamic font loading container -->
+    <link id="dynamic-fonts" rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Subtle ambient particles -->
+    <div class="ambient-particles" id="ambient-particles"></div>
+    
+    <!-- Grain overlay -->
+    <div class="grain"></div>
+
+    <!-- Floating decorative shapes (personality-specific) -->
+    <div class="floating-shapes" id="decorative-shapes"></div>
+
+    <div class="container">
+        <!-- Landing / Selection Screen -->
+        <div id="landing-screen" class="screen active">
+            <!-- Decorative corner elements -->
+            <div class="lab-decor top-left"></div>
+            <div class="lab-decor top-right"></div>
+            <div class="lab-decor bottom-left"></div>
+            <div class="lab-decor bottom-right"></div>
+            
+            <!-- Floating gemstones -->
+            <div class="floating-gems">
+                <div class="gem gem-1"></div>
+                <div class="gem gem-2"></div>
+                <div class="gem gem-3"></div>
+            </div>
+            
+            <header class="lab-header">
+                <a href="https://mg175.github.io/mood-bored/" class="back-to-moods">← Moods</a>
+                
+                <!-- Decorative lab elements -->
+                <div class="lab-decorations">
+                    <!-- Beaker left -->
+                    <svg class="lab-icon beaker-left" width="40" height="50" viewBox="0 0 40 50" fill="none">
+                        <path d="M12 2 L12 18 L4 42 C3 46 6 48 10 48 L30 48 C34 48 37 46 36 42 L28 18 L28 2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <line x1="10" y1="2" x2="30" y2="2" stroke="currentColor" stroke-width="1.5"/>
+                        <ellipse cx="20" cy="38" rx="10" ry="4" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                    </svg>
+                    
+                    <!-- Flask right -->
+                    <svg class="lab-icon flask-right" width="35" height="50" viewBox="0 0 35 50" fill="none">
+                        <path d="M13 2 L13 16 L3 40 C1 45 5 48 10 48 L25 48 C30 48 34 45 32 40 L22 16 L22 2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <line x1="11" y1="2" x2="24" y2="2" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="17.5" cy="36" r="3" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                    </svg>
+                    
+                    <!-- Test tube left -->
+                    <svg class="lab-icon tube-left" width="16" height="45" viewBox="0 0 16 45" fill="none">
+                        <path d="M3 2 L3 35 C3 40 6 43 8 43 C10 43 13 40 13 35 L13 2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <line x1="2" y1="2" x2="14" y2="2" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="3" y1="28" x2="13" y2="28" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+                    </svg>
+                    
+                    <!-- Molecule right -->
+                    <svg class="lab-icon molecule-right" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <circle cx="8" cy="10" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <circle cx="32" cy="10" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <circle cx="12" cy="32" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <line x1="15" y1="16" x2="11" y2="12" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="25" y1="16" x2="29" y2="12" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="16" y1="25" x2="14" y2="29" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                
+                <div class="lab-logo">
+                    <div class="logo-mark">
+                        <svg width="44" height="44" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M16 6 L16 26 M10 12 L16 18 L22 12" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">The Branding Lab</span>
+                </div>
+                <p class="lab-tagline">Where brand identities are carefully crafted</p>
+                
+                <!-- Decorative line separator -->
+                <div class="header-separator">
+                    <span class="sep-line"></span>
+                    <span class="sep-dot"></span>
+                    <span class="sep-line"></span>
+                </div>
+            </header>
+
+            <main class="lab-main">
+                <div class="lab-intro">
+                    <p class="lab-description">Select your ingredients. We'll synthesize them into a complete brand.</p>
+                </div>
+
+                <div class="lab-workspace">
+                    <!-- Ingredient Station 1: Color -->
+                    <div class="ingredient-station">
+                        <div class="station-header">
+                            <div class="station-number">01</div>
+                            <div class="station-info">
+                                <h3 class="station-title">Color Essence</h3>
+                                <p class="station-description">The emotional foundation of your palette</p>
+                            </div>
+                        </div>
+                        <div class="station-control">
+                            <select id="color-mood" class="lab-select">
+                                <option value="">Select color mood...</option>
+                                <option value="warm">Warm — Terracottas, oranges, creams</option>
+                                <option value="cool">Cool — Blues, teals, silvers</option>
+                                <option value="earthy">Earthy — Browns, sage, olive</option>
+                                <option value="bold">Bold — Saturated, high contrast</option>
+                                <option value="muted">Muted — Dusty, desaturated tones</option>
+                                <option value="luxe">Luxe — Golds, deep purples, black</option>
+                                <option value="pastel">Pastel — Soft pinks, lavenders, mint</option>
+                                <option value="mono">Monochrome — Grayscale with one accent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Ingredient Station 2: Industry -->
+                    <div class="ingredient-station">
+                        <div class="station-header">
+                            <div class="station-number">02</div>
+                            <div class="station-info">
+                                <h3 class="station-title">Industry Context</h3>
+                                <p class="station-description">The world your brand operates in</p>
+                            </div>
+                        </div>
+                        <div class="station-control">
+                            <select id="industry" class="lab-select">
+                                <option value="">Select industry...</option>
+                                <option value="tech">Tech & Software</option>
+                                <option value="food">Food & Beverage</option>
+                                <option value="fashion">Fashion & Apparel</option>
+                                <option value="home">Home & Living</option>
+                                <option value="health">Health & Wellness</option>
+                                <option value="beauty">Beauty & Skincare</option>
+                                <option value="finance">Finance & Professional</option>
+                                <option value="kids">Kids & Family</option>
+                                <option value="outdoor">Outdoor & Adventure</option>
+                                <option value="creative">Creative & Arts</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Ingredient Station 3: Personality -->
+                    <div class="ingredient-station">
+                        <div class="station-header">
+                            <div class="station-number">03</div>
+                            <div class="station-info">
+                                <h3 class="station-title">Brand Personality</h3>
+                                <p class="station-description">How your brand feels to people</p>
+                            </div>
+                        </div>
+                        <div class="station-control">
+                            <select id="personality" class="lab-select">
+                                <option value="">Select personality...</option>
+                                <option value="playful">Playful — Fun, energetic, whimsical</option>
+                                <option value="minimalist">Minimalist — Clean, essential, refined</option>
+                                <option value="sophisticated">Sophisticated — Elegant, premium, polished</option>
+                                <option value="friendly">Friendly — Warm, approachable, trustworthy</option>
+                                <option value="bold">Bold & Edgy — Daring, disruptive, confident</option>
+                                <option value="organic">Organic — Natural, authentic, handcrafted</option>
+                                <option value="retro">Retro — Nostalgic, vintage, classic</option>
+                                <option value="futuristic">Futuristic — Innovative, cutting-edge, sleek</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Ingredient Station 4: Audience -->
+                    <div class="ingredient-station">
+                        <div class="station-header">
+                            <div class="station-number">04</div>
+                            <div class="station-info">
+                                <h3 class="station-title">Target Audience</h3>
+                                <p class="station-description">Who you're trying to reach</p>
+                            </div>
+                        </div>
+                        <div class="station-control">
+                            <select id="audience" class="lab-select">
+                                <option value="">Select audience...</option>
+                                <option value="genz">Gen Z — Digital natives, trend-aware</option>
+                                <option value="millennial">Millennials — Experience-driven, values-conscious</option>
+                                <option value="professional">Professional — Corporate, business-focused</option>
+                                <option value="parents">Parents — Family-oriented, practical</option>
+                                <option value="luxury">Luxury Consumer — Quality-focused, discerning</option>
+                                <option value="budget">Budget-Conscious — Value-seeking, practical</option>
+                                <option value="creative">Creative Class — Artistic, unconventional</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lab-synthesis">
+                    <div class="synthesis-status">
+                        <span class="status-text" id="synthesis-status">Select all four ingredients to begin</span>
+                        <div class="status-indicators">
+                            <span class="indicator" id="ind-1"></span>
+                            <span class="indicator" id="ind-2"></span>
+                            <span class="indicator" id="ind-3"></span>
+                            <span class="indicator" id="ind-4"></span>
+                        </div>
+                    </div>
+                    <button id="grow-btn" class="synthesize-button" disabled>
+                        <span class="btn-text">Synthesize Brand</span>
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </main>
+
+            <footer class="lab-footer">
+                <p>Precision crafted brand identities</p>
+            </footer>
+        </div>
+
+        <!-- ========== BRAND DASHBOARD ========== -->
+        <div id="result-screen" class="screen">
+            
+            <!-- Loading State -->
+            <div class="brand-loading" id="brand-loading">
+                <div class="loading-spinner"></div>
+                <span class="loading-text">Synthesizing your brand...</span>
+            </div>
+            
+            <!-- Dashboard Container -->
+            <div class="dashboard" id="dashboard">
+                
+                <!-- Top Bar -->
+                <div class="dash-topbar">
+                    <button class="dash-back" id="back-btn">← Back</button>
+                    <div class="dash-actions">
+                        <button class="dash-btn" id="regenerate-btn">↻ Regenerate</button>
+                    </div>
+                </div>
+                
+                <!-- Main Dashboard Grid -->
+                <div class="dash-grid">
+                    
+                    <!-- Brand Identity Card (Large) -->
+                    <div class="dash-card dash-card-brand">
+                        <h1 class="dash-brand-name" id="brand-name">Brand Name</h1>
+                        <p class="dash-tagline" id="brand-tagline">Tagline goes here</p>
+                    </div>
+                    
+                    <!-- Color Palette Card -->
+                    <div class="dash-card dash-card-colors">
+                        <div class="dash-card-header">
+                            <span class="dash-card-title">Color Palette</span>
+                        </div>
+                        <div class="dash-palette" id="dash-palette"></div>
+                    </div>
+                    
+                    <!-- Typography Card -->
+                    <div class="dash-card dash-card-type">
+                        <div class="dash-card-header">
+                            <span class="dash-card-title">Typography</span>
+                        </div>
+                        <div class="dash-type">
+                            <div class="dash-type-item">
+                                <span class="dash-type-label">Heading</span>
+                                <span class="dash-type-name" id="dash-heading-font">Font Name</span>
+                                <span class="dash-type-sample" id="dash-heading-sample">Aa Bb Cc</span>
+                            </div>
+                            <div class="dash-type-item">
+                                <span class="dash-type-label">Body</span>
+                                <span class="dash-type-name" id="dash-body-font">Font Name</span>
+                                <span class="dash-type-sample" id="dash-body-sample">Aa Bb Cc</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- About Card -->
+                    <div class="dash-card dash-card-about">
+                        <div class="dash-card-header">
+                            <span class="dash-card-title">Brand Story</span>
+                        </div>
+                        <h3 class="dash-about-headline" id="dash-about-headline">About Us</h3>
+                        <p class="dash-about-text" id="dash-about-text">
+                            Brand story and description goes here.
+                        </p>
+                        <div class="dash-about-values">
+                            <span class="dash-about-label">Core Values</span>
+                            <div class="dash-values-list" id="dash-values-list"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Personality Card -->
+                    <div class="dash-card dash-card-personality">
+                        <div class="dash-card-header">
+                            <span class="dash-card-title">Brand Personality</span>
+                        </div>
+                        <div class="dash-personality-type">
+                            <span class="dash-personality-badge" id="dash-personality-badge">Friendly</span>
+                        </div>
+                        <p class="dash-personality-desc" id="dash-personality-desc">Description of personality type.</p>
+                        <div class="dash-mood-words" id="dash-mood-words"></div>
+                        <div class="dash-personality-traits">
+                            <span class="dash-traits-label">Key Traits</span>
+                            <div class="dash-traits-list" id="dash-traits-list"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Voice Card -->
+                    <div class="dash-card dash-card-voice">
+                        <div class="dash-card-header">
+                            <span class="dash-card-title">Brand Voice</span>
+                        </div>
+                        <div class="dash-voice-tone">
+                            <span class="dash-voice-label">Tone</span>
+                            <span class="dash-voice-tone-text" id="dash-voice-tone">Warm & Approachable</span>
+                        </div>
+                        <p class="dash-voice-text" id="dash-voice-text">
+                            Voice description goes here.
+                        </p>
+                        <div class="dash-voice-examples">
+                            <span class="dash-voice-label">Example Phrases</span>
+                            <ul class="dash-voice-phrases" id="dash-voice-phrases"></ul>
+                        </div>
+                        <div class="dash-voice-donts">
+                            <span class="dash-voice-label">Avoid</span>
+                            <ul class="dash-voice-avoid" id="dash-voice-avoid"></ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Logo Direction Card -->
+                    <div class="dash-card dash-card-logo">
+                        <div class="dash-card-header">
+                            <span class="dash-card-title">Logo Direction</span>
+                        </div>
+                        <p class="dash-logo-desc" id="dash-logo-desc">Logo style description.</p>
+                        <div class="dash-logo-keywords" id="dash-logo-keywords"></div>
+                    </div>
+                    
+                    <!-- Photography Card -->
+                    <div class="dash-card dash-card-photo">
+                        <div class="dash-card-header">
+                            <span class="dash-card-title">Photography Style</span>
+                        </div>
+                        <p class="dash-photo-desc" id="dash-photo-desc">Photography description.</p>
+                    </div>
+                    
+                </div>
+                
+                <!-- Footer -->
+                <div class="dash-footer">
+                    <p>✿ Made with The Branding Lab</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
